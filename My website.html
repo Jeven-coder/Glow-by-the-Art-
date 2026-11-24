@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLOW BY THE ART | Premium Digital Systems & Editorial Templates</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: 'var(--bg-primary)',
+            surface: 'var(--bg-surface)',
+            surfaceHover: 'var(--bg-surface-hover)',
+            burgundy: '#6E232B',
+            crimson: '#E03E3E',
+            silverGray: '#E3DCDE',
+            alabaster: '#F9F6F6',
+            amberGlow: '#D97706',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #F9F6F6;
+      --bg-surface: #FFFFFF;
+      --bg-surface-hover: #F2ECEE;
+      --bg-elevated: #ECE4E6;
+      --text-primary: #121011;
+      --text-secondary: #4A4043;
+      --text-muted: #786A6E;
+      --border-subtle: rgba(18, 16, 17, 0.10);
+      --border-strong: rgba(18, 16, 17, 0.18);
+      --nav-bg: rgba(249, 246, 246, 0.85);
+      --accent-crimson: #E03E3E;
+      --accent-burgundy: #6E232B;
+      --silver-gray: #E3DCDE;
+      --alabaster: #F9F6F6;
+      --card-shadow: 0 12px 32px -12px rgba(18, 16, 17, 0.08), 0 4px 12px -4px rgba(110, 35, 43, 0.05);
+      --card-shadow-hover: 0 22px 44px -14px rgba(110, 35, 43, 0.18), 0 0 26px -6px rgba(224, 62, 62, 0.22);
+    }
+
+    html.dark {
+      --bg-primary: #121011;
+      --bg-surface: #221D1F;
+      --bg-surface-hover: #2C2528;
+      --bg-elevated: #1A1618;
+      --text-primary: #F9F6F6;
+      --text-secondary: #E3DCDE;
+      --text-muted: #9F9396;
+      --border-subtle: rgba(227, 220, 222, 0.09);
+      --border-strong: rgba(227, 220, 222, 0.18);
+      --nav-bg: rgba(18, 16, 17, 0.84);
+      --card-shadow: 0 16px 36px -14px rgba(0, 0, 0, 0.65);
+      --card-shadow-hover: 0 24px 48px -14px rgba(0, 0, 0, 0.85), 0 0 32px -6px rgba(224, 62, 62, 0.32);
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      transition: background-color 0.35s ease, color 0.35s ease;
+    }
+
+    .hero-mesh {
+      background:
+        radial-gradient(circle at 18% 28%, rgba(224, 62, 62, 0.14) 0%, transparent 48%),
+        radial-gradient(circle at 82% 24%, rgba(110, 35, 43, 0.18) 0%, transparent 46%),
+        radial-gradient(circle at 52% 78%, rgba(224, 62, 62, 0.07) 0%, transparent 52%);
+    }
+
+    .glass-nav {
+      background: var(--nav-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background-color 0.35s ease, border-color 0.35s ease;
+    }
+
+    .theme-surface {
+      background-color: var(--bg-surface);
+      border-color: var(--border-subtle);
+      transition: background-color 0.35s ease, border-color 0.35s ease;
+    }
+
+    .theme-elevated {
+      background-color: var(--bg-elevated);
+      border-color: var(--border-subtle);
+      transition: background-color 0.35s ease, border-color 0.35s ease;
+    }
+
+    .theme-text-primary { color: var(--text-primary); }
+    .theme-text-secondary { color: var(--text-secondary); }
+    .theme-text-muted { color: var(--text-muted); }
+    .theme-border { border-color: var(--border-subtle); }
+
+    .art-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--card-shadow);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
+    }
+
+    .art-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(224, 62, 62, 0.55);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .glow-room-active {
+      background-color: #0D0A0B !important;
+      color: #F9F6F6 !important;
+    }
+    .glow-room-active .artwork-stage {
+      box-shadow:
+        0 0 55px rgba(224, 62, 62, 0.48),
+        0 0 95px rgba(110, 35, 43, 0.38),
+        inset 0 0 28px rgba(249, 246, 246, 0.12);
+      filter: brightness(1.14) contrast(1.10) saturate(1.22);
+    }
+    .artwork-stage {
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: #6E232B; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #E03E3E; }
+  </style>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('glowByTheArtTheme');
+      if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+</head>
+<body class="antialiased selection:bg-crimson/30 selection:text-crimson">
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="fixed top-0 inset-x-0 z-50 h-8 bg-gradient-to-r from-[#121011] via-[#6E232B] to-[#121011] text-[#F9F6F6] border-b border-crimson/30 flex items-center justify-center px-4">
+    <p class="text-[10px] sm:text-xs font-semibold tracking-[0.22em] uppercase truncate">
+      DIGITAL TOOLS THAT MOVE YOU FORWARD — INSTANT ACCESS
+    </p>
+  </div>
+
+  <!-- 1. STICKY GLASSMORPHIC NAVBAR -->
+  <header class="fixed top-8 inset-x-0 z-40 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative w-9 h-9 rounded-xl theme-surface border border-crimson/45 flex items-center justify-center shadow-[0_0_20px_rgba(224,62,62,0.35)] group-hover:shadow-[0_0_28px_rgba(224,62,62,0.65)] transition-all duration-300">
+          <span class="w-3.5 h-3.5 rounded-sm rotate-45 bg-gradient-to-tr from-burgundy via-crimson to-alabaster animate-pulse"></span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-sans text-base sm:text-lg tracking-[0.16em] font-extrabold uppercase theme-text-primary">GLOW BY THE ART</span>
+          <span class="text-[10px] tracking-[0.26em] text-crimson uppercase font-semibold -mt-0.5">The heart behind every creation</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium theme-text-secondary">
+        <a href="#gallery" class="hover:text-crimson transition-colors">Shop</a>
+        <a href="#bundle" class="hover:text-crimson transition-colors">Bundles</a>
+        <a href="#categories" class="hover:text-crimson transition-colors">Categories</a>
+        <a href="#about" class="hover:text-crimson transition-colors">About</a>
+        <button onclick="openDownloadsModal()" class="hover:text-crimson transition-colors flex items-center gap-1.5">
+          <span>My Downloads</span>
+          <span id="navDownloadBadge" class="hidden px-1.5 py-0.5 text-[10px] rounded bg-crimson text-white font-bold">0</span>
+        </button>
+        <button onclick="openAdminModal()" class="hover:text-crimson transition-colors text-xs uppercase tracking-wider opacity-80 hover:opacity-100">Admin</button>
+      </nav>
+
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <button id="themeToggleBtn" onclick="toggleTheme()" role="switch" aria-checked="true" aria-label="Toggle Dark or Light Mode" class="relative inline-flex items-center h-9 w-16 rounded-full theme-surface border theme-border p-1 transition-all duration-300 hover:border-crimson/60 focus:outline-none" title="Switch Dark / Light Editorial Theme">
+          <span class="sr-only">Toggle color theme</span>
+          <span class="w-6 h-6 flex items-center justify-center text-amber-500 z-10">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          <span class="w-6 h-6 flex items-center justify-center text-crimson ml-auto z-10">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+          </span>
+          <span id="themeToggleThumb" class="absolute top-1 left-1 w-7 h-7 rounded-full bg-gradient-to-br from-crimson to-burgundy shadow-md transform translate-x-7 transition-transform duration-300 ease-out"></span>
+        </button>
+
+        <button id="cartTriggerBtn" onclick="toggleCart(true)" class="relative flex items-center gap-2.5 px-3.5 sm:px-4 py-2 rounded-full theme-surface border theme-border hover:border-crimson/60 transition-all duration-200 group" aria-label="Open Shopping Cart">
+          <svg class="w-5 h-5 theme-text-primary group-hover:text-crimson transition-colors" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="hidden sm:inline text-sm font-medium theme-text-primary">Bag</span>
+          <span id="cartCountBadge" class="inline-flex items-center justify-center min-w-[22px] h-[22px] px-1.5 text-xs font-semibold rounded-full bg-gradient-to-r from-crimson to-burgundy text-white shadow-[0_0_12px_rgba(224,62,62,0.55)] transition-transform duration-200">0</span>
+        </button>
+
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl theme-surface border theme-border theme-text-primary hover:border-crimson" aria-label="Toggle Menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden lg:hidden border-t theme-border theme-surface px-6 py-4 space-y-3">
+      <a href="#gallery" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium theme-text-secondary hover:text-crimson">Shop All</a>
+      <a href="#bundle" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium theme-text-secondary hover:text-crimson">Complete Creator Bundle</a>
+      <a href="#categories" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium theme-text-secondary hover:text-crimson">Categories</a>
+      <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium theme-text-secondary hover:text-crimson">About & FAQ</a>
+      <div class="pt-2 border-t theme-border flex items-center gap-4">
+        <button onclick="toggleMobileMenu(); openDownloadsModal();" class="text-sm font-semibold text-crimson">My Downloads</button>
+        <button onclick="toggleMobileMenu(); openAdminModal();" class="text-sm font-medium theme-text-muted hover:text-crimson">Store Admin</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. FEATURED HERO BANNER -->
+  <section class="relative pt-40 pb-20 lg:pt-48 lg:pb-28 hero-mesh overflow-hidden">
+    <div class="pointer-events-none absolute -top-24 left-1/4 w-96 h-96 bg-crimson/15 rounded-full blur-[120px]"></div>
+    <div class="pointer-events-none absolute top-40 right-10 w-80 h-80 bg-burgundy/20 rounded-full blur-[110px]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <div class="lg:col-span-7 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full theme-surface border theme-border text-xs tracking-widest uppercase text-crimson font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-crimson animate-ping"></span>
+            <span>Executive Digital Systems • Instant Download</span>
+          </div>
+
+          <h1 class="font-sans text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight theme-text-primary leading-[1.08] uppercase">
+            LESS BUSYWORK.<br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-crimson via-[#F26B6B] to-burgundy">BETTER WORK.</span>
+          </h1>
+
+          <p class="mt-6 text-base sm:text-lg theme-text-secondary max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Premium templates and digital systems built to help you create, organize and grow. Engineered with bold editorial precision for founders, creators, and modern operators.
+          </p>
+
+          <div class="mt-9 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="#gallery" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-crimson to-burgundy text-white font-semibold text-xs sm:text-sm tracking-wider uppercase shadow-[0_0_30px_rgba(224,62,62,0.4)] hover:shadow-[0_0_42px_rgba(224,62,62,0.65)] transition-all duration-300 text-center">
+              Explore The Collection
+            </a>
+            <button onclick="filterBestsellersQuick()" class="w-full sm:w-auto px-7 py-4 rounded-xl theme-surface hover:border-crimson/60 border theme-border theme-text-primary font-semibold text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-2 transition-all">
+              <svg class="w-4 h-4 text-crimson" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <span>Shop Bestsellers</span>
+            </button>
+          </div>
+
+          <div class="mt-10 pt-8 border-t theme-border grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <p class="font-sans text-xl sm:text-2xl theme-text-primary font-extrabold">Instant</p>
+              <p class="text-xs theme-text-muted mt-0.5">ZIP & Cloud Delivery</p>
+            </div>
+            <div>
+              <p class="font-sans text-xl sm:text-2xl theme-text-primary font-extrabold">100%</p>
+              <p class="text-xs theme-text-muted mt-0.5">Editable Source Files</p>
+            </div>
+            <div>
+              <p class="font-sans text-xl sm:text-2xl theme-text-primary font-extrabold">Lifetime</p>
+              <p class="text-xs theme-text-muted mt-0.5">Version Updates</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 flex justify-center">
+          <div onclick="openLightbox(102, false)" class="cursor-pointer group relative w-full max-w-md rounded-2xl p-4 theme-surface border border-crimson/35 shadow-[0_0_60px_rgba(224,62,62,0.18)] animate-float">
+            <div class="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-crimson via-burgundy to-crimson opacity-25 blur-md group-hover:opacity-55 transition duration-500"></div>
+            
+            <div class="relative bg-[#121011] rounded-xl overflow-hidden border border-white/10">
+              <div class="aspect-[4/5] w-full overflow-hidden">
+                <img 
+                  src="https://i.etsystatic.com/68794678/r/il/4d4c6f/8794324890/il_570xN.8794324890_f166.jpg" 
+                  alt="Editorial Pitch Deck Template Preview" 
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
+              
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-md bg-[#121011]/85 backdrop-blur-md border border-crimson/40 text-[11px] font-semibold text-crimson tracking-wider uppercase">
+                Bestseller • Editorial Deck
+              </div>
+
+              <div class="p-4 bg-[#221D1F]/95 backdrop-blur-md flex items-center justify-between border-t border-white/10">
+                <div>
+                  <h3 class="font-sans text-base text-[#F9F6F6] font-bold">Modern, Editable Canva Pitch Deck | Business Proposal</h3>
+                  <p class="text-xs text-[#E3DCDE]/75">Canva Presentation Template • GlowbytheArt on Etsy</p>
+                </div>
+                <div class="text-right">
+                  <span class="text-base font-extrabold text-crimson">$14</span>
+                  <p class="text-[11px] text-[#E3DCDE] group-hover:text-crimson transition-colors">Preview Kit →</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUR EDITORIAL SHOP CATEGORIES -->
+  <section id="categories" class="py-14 border-t theme-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <button onclick="jumpToCategory('Business & Strategy')" class="text-left p-6 rounded-2xl art-card group">
+          <span class="text-xs font-bold tracking-widest text-crimson uppercase">01 / Department</span>
+          <h3 class="font-sans text-lg font-extrabold theme-text-primary mt-2 group-hover:text-crimson transition-colors">BUSINESS & STRATEGY</h3>
+          <p class="text-xs theme-text-muted mt-2 leading-relaxed">Pitch decks, business forms, proposals, brand kits.</p>
+        </button>
+
+        <button onclick="jumpToCategory('Content & Creator')" class="text-left p-6 rounded-2xl art-card group">
+          <span class="text-xs font-bold tracking-widest text-crimson uppercase">02 / Department</span>
+          <h3 class="font-sans text-lg font-extrabold theme-text-primary mt-2 group-hover:text-crimson transition-colors">CONTENT & CREATOR</h3>
+          <p class="text-xs theme-text-muted mt-2 leading-relaxed">Instagram templates, social media kits, content planners.</p>
+        </button>
+
+        <button onclick="jumpToCategory('Productivity')" class="text-left p-6 rounded-2xl art-card group">
+          <span class="text-xs font-bold tracking-widest text-crimson uppercase">03 / Department</span>
+          <h3 class="font-sans text-lg font-extrabold theme-text-primary mt-2 group-hover:text-crimson transition-colors">PRODUCTIVITY</h3>
+          <p class="text-xs theme-text-muted mt-2 leading-relaxed">Digital planners, trackers, productivity systems.</p>
+        </button>
+
+        <button onclick="jumpToCategory('Money & Finance')" class="text-left p-6 rounded-2xl art-card group">
+          <span class="text-xs font-bold tracking-widest text-crimson uppercase">04 / Department</span>
+          <h3 class="font-sans text-lg font-extrabold theme-text-primary mt-2 group-hover:text-crimson transition-colors">MONEY & FINANCE</h3>
+          <p class="text-xs theme-text-muted mt-2 leading-relaxed">Budget templates, expense trackers, financial planners.</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. DIGITAL ARCHIVE GRID WITH SLIDES FOR SAME-NAME PRODUCTS -->
+  <section id="gallery" class="py-20 border-t theme-border relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] text-crimson font-bold">Digital Archive</span>
+          <h2 class="font-sans text-3xl sm:text-4xl theme-text-primary font-extrabold tracking-tight mt-2 uppercase">Shop Digital Systems</h2>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          <div class="relative flex-1 sm:w-64">
+            <input type="text" id="searchInput" oninput="applyFilters()" placeholder="Search templates, planners..." class="w-full pl-10 pr-4 py-2.5 rounded-xl theme-surface border theme-border text-sm theme-text-primary placeholder-gray-500 focus:outline-none focus:border-crimson transition-colors" />
+            <svg class="w-4 h-4 theme-text-muted absolute left-3.5 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" />
+            </svg>
+          </div>
+
+          <select id="sortSelect" onchange="applyFilters()" aria-label="Sort products" class="px-4 py-2.5 rounded-xl theme-surface border theme-border text-sm theme-text-primary focus:outline-none focus:border-crimson cursor-pointer">
+            <option value="featured">Sort: Featured</option>
+            <option value="bestsellers">Bestsellers First</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="collections" class="flex items-center gap-2.5 overflow-x-auto pb-4 mb-8 no-scrollbar">
+        <button onclick="setCategory('All Works')" data-cat="All Works" class="filter-pill active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all bg-gradient-to-r from-crimson to-burgundy text-white shadow-[0_0_20px_rgba(224,62,62,0.35)]">
+          All Systems
+        </button>
+        <button onclick="setCategory('Business & Strategy')" data-cat="Business & Strategy" class="filter-pill px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all theme-surface border theme-border theme-text-secondary hover:text-crimson hover:border-crimson/50">
+          Business & Strategy
+        </button>
+        <button onclick="setCategory('Content & Creator')" data-cat="Content & Creator" class="filter-pill px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all theme-surface border theme-border theme-text-secondary hover:text-crimson hover:border-crimson/50">
+          Content & Creator
+        </button>
+        <button onclick="setCategory('Productivity')" data-cat="Productivity" class="filter-pill px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all theme-surface border theme-border theme-text-secondary hover:text-crimson hover:border-crimson/50">
+          Productivity
+        </button>
+        <button onclick="setCategory('Money & Finance')" data-cat="Money & Finance" class="filter-pill px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all theme-surface border theme-border theme-text-secondary hover:text-crimson hover:border-crimson/50">
+          Money & Finance
+        </button>
+      </div>
+
+      <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+
+      <div id="emptyGalleryState" class="hidden text-center py-20 theme-surface rounded-2xl border theme-border">
+        <p class="font-sans text-2xl theme-text-primary font-bold">No digital systems match your filter</p>
+        <p class="text-sm theme-text-muted mt-2">Try resetting your category selection or search keywords.</p>
+        <button onclick="resetFilters()" class="mt-5 px-6 py-2.5 rounded-xl bg-crimson/15 border border-crimson/50 text-crimson text-sm font-semibold hover:bg-crimson hover:text-white transition-all">
+          Reset Catalog Filters
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED BUNDLE SPOTLIGHT -->
+  <section id="bundle" class="py-20 border-t theme-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-[#221D1F] via-[#121011] to-[#6E232B]/70 border border-crimson/35 shadow-[0_24px_60px_-15px_rgba(110,35,43,0.45)] text-[#F9F6F6] relative overflow-hidden">
+        <div class="pointer-events-none absolute -right-20 -top-20 w-96 h-96 bg-crimson/20 rounded-full blur-[110px]"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+          <div class="lg:col-span-7 space-y-5">
+            <div id="bundleBadge" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-crimson/20 border border-crimson/50 text-xs font-bold tracking-widest uppercase text-crimson">
+              Save 45% • All-Access Vault
+            </div>
+            <h2 id="bundleTitle" class="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight uppercase leading-tight text-[#F9F6F6]">
+              THE COMPLETE CREATOR BUNDLE
+            </h2>
+            <p id="bundleDescription" class="text-base sm:text-lg text-[#E3DCDE]/90 max-w-xl leading-relaxed">
+              Everything you need to plan, design, publish, and scale. Includes flagship templates, pitch decks, planners, and social media toolkits in one instant download.
+            </p>
+            <div class="flex flex-wrap items-baseline gap-4 pt-2">
+              <span id="bundlePrice" class="text-4xl font-extrabold text-crimson">$49</span>
+              <span id="bundleComparePrice" class="text-lg text-[#E3DCDE]/60 line-through">$82</span>
+              <span id="bundleSubtitle" class="px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-[#F9F6F6]">Instant ZIP + Notion & Canva Links</span>
+            </div>
+            <div class="pt-3">
+              <button id="bundleCtaBtn" onclick="addBundleToCart()" class="px-8 py-4 rounded-xl bg-gradient-to-r from-crimson to-burgundy hover:brightness-110 text-white font-bold text-sm tracking-wider uppercase shadow-[0_0_30px_rgba(224,62,62,0.5)] transition-all">
+                GET THE BUNDLE — $49
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div id="bundleItemsGrid" class="grid grid-cols-2 gap-3 p-4 rounded-2xl bg-[#121011]/80 border border-white/10"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY GLOW BY THE ART & FAQ SECTION -->
+  <section id="about" class="py-20 border-t theme-border theme-elevated">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div class="rounded-2xl p-8 sm:p-10 theme-surface border theme-border relative overflow-hidden">
+          <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-crimson/15 rounded-full blur-3xl"></div>
+          <span class="text-xs uppercase tracking-[0.25em] text-crimson font-bold">Why Glow by the Art</span>
+          <h3 class="font-sans text-3xl theme-text-primary font-extrabold mt-2 uppercase">Engineered for Execution</h3>
+          <p class="theme-text-secondary text-sm sm:text-base leading-relaxed mt-4">
+            We eliminate bloated layouts and fragile files. Every digital product in our catalog is built on modular typographic grids with instant cloud access and step-by-step customization guides.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 mt-6 pt-6 border-t theme-border text-xs sm:text-sm">
+            <div class="flex items-center gap-2 font-semibold theme-text-primary"><span class="w-2 h-2 rounded-full bg-crimson"></span> Instant download</div>
+            <div class="flex items-center gap-2 font-semibold theme-text-primary"><span class="w-2 h-2 rounded-full bg-crimson"></span> Easy to edit</div>
+            <div class="flex items-center gap-2 font-semibold theme-text-primary"><span class="w-2 h-2 rounded-full bg-crimson"></span> Designed to save time</div>
+            <div class="flex items-center gap-2 font-semibold theme-text-primary"><span class="w-2 h-2 rounded-full bg-crimson"></span> Professional layouts</div>
+            <div class="flex items-center gap-2 font-semibold theme-text-primary"><span class="w-2 h-2 rounded-full bg-crimson"></span> Beginner friendly</div>
+            <div class="flex items-center gap-2 font-semibold theme-text-primary"><span class="w-2 h-2 rounded-full bg-crimson"></span> Lifetime file access</div>
+          </div>
+        </div>
+
+        <div id="faq" class="space-y-4">
+          <span class="text-xs uppercase tracking-[0.25em] text-crimson font-bold">Support & Licensing</span>
+          <h3 class="font-sans text-3xl theme-text-primary font-extrabold mb-4 uppercase">Frequently Asked</h3>
+
+          <details class="group rounded-xl theme-surface border theme-border p-5 open:border-crimson/50">
+            <summary class="flex justify-between items-center font-semibold theme-text-primary cursor-pointer list-none">
+              <span>How do I access my files after purchase?</span>
+              <span class="text-crimson group-open:rotate-45 transition-transform text-xl">+</span>
+            </summary>
+            <p class="text-sm theme-text-secondary mt-3 leading-relaxed">
+              Immediately after checkout, you receive a unique order token (e.g., <code class="text-crimson font-mono">GBT-XXXX-XXXX</code>) that unlocks your protected files inside the <strong>My Downloads</strong> portal and sends a backup receipt to your email.
+            </p>
+          </details>
+
+          <details class="group rounded-xl theme-surface border theme-border p-5 open:border-crimson/50">
+            <summary class="flex justify-between items-center font-semibold theme-text-primary cursor-pointer list-none">
+              <span>What software do I need to edit the templates?</span>
+              <span class="text-crimson group-open:rotate-45 transition-transform text-xl">+</span>
+            </summary>
+            <p class="text-sm theme-text-secondary mt-3 leading-relaxed">
+              All templates work with free browser-based tools (Canva Free, Google Slides/Sheets, GoodNotes/Notability for PDF planners) as well as Figma, Keynote, and Adobe Creative Cloud.
+            </p>
+          </details>
+
+          <details class="group rounded-xl theme-surface border theme-border p-5 open:border-crimson/50">
+            <summary class="flex justify-between items-center font-semibold theme-text-primary cursor-pointer list-none">
+              <span>Can I test promo codes at checkout?</span>
+              <span class="text-crimson group-open:rotate-45 transition-transform text-xl">+</span>
+            </summary>
+            <p class="text-sm theme-text-secondary mt-3 leading-relaxed">
+              Yes! Apply <code class="text-crimson font-mono">GLOW15</code> for 15% off, <code class="text-crimson font-mono">CREATOR20</code> for 20% off, or <code class="text-crimson font-mono">SAVE5</code> for $5 off inside your shopping bag drawer.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. NEWSLETTER & EDITORIAL FOOTER -->
+  <footer class="border-t theme-border theme-surface py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b theme-border">
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-3">
+            <span class="w-3 h-3 rounded-sm rotate-45 bg-gradient-to-tr from-crimson to-burgundy shadow-[0_0_12px_#E03E3E]"></span>
+            <span class="font-sans text-lg tracking-[0.16em] theme-text-primary font-extrabold uppercase">GLOW BY THE ART</span>
+          </div>
+          <p class="text-sm theme-text-secondary mt-4 max-w-sm leading-relaxed">
+            Editorial digital product studio crafting sharp templates, financial trackers, and creator operating systems. Also available on <a href="https://glowbytheart.etsy.com" target="_blank" rel="noopener noreferrer" class="text-crimson underline hover:brightness-110">Etsy</a>.
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-2.5 text-sm">
+          <p class="theme-text-primary font-bold mb-3 uppercase tracking-wider text-xs">Navigation</p>
+          <a href="#gallery" class="block theme-text-secondary hover:text-crimson transition-colors">Shop All</a>
+          <a href="#bundle" class="block theme-text-secondary hover:text-crimson transition-colors">Creator Bundle</a>
+          <a href="https://glowbytheart.etsy.com" target="_blank" rel="noopener noreferrer" class="block theme-text-secondary hover:text-crimson transition-colors">Etsy Shop ↗</a>
+          <button onclick="openDownloadsModal()" class="block theme-text-secondary hover:text-crimson transition-colors">Digital Download Portal</button>
+          <button onclick="openAdminModal()" class="block theme-text-secondary hover:text-crimson transition-colors">Store Owner Admin</button>
+        </div>
+
+        <div class="md:col-span-4">
+          <p class="theme-text-primary font-extrabold text-sm uppercase tracking-wider mb-1.5">MAKE YOUR NEXT MOVE.</p>
+          <p class="text-xs theme-text-muted mb-4">Get new digital tools, exclusive offers, and creative resources delivered straight to your inbox.</p>
+          <form onsubmit="handleNewsletter(event)" class="flex gap-2">
+            <input type="email" id="newsletterEmail" required placeholder="operator@domain.com" class="flex-1 px-4 py-2.5 rounded-xl theme-elevated border theme-border text-sm theme-text-primary placeholder-gray-500 focus:outline-none focus:border-crimson" />
+            <button type="submit" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-crimson to-burgundy text-white font-semibold text-sm hover:brightness-110 transition-all">
+              Join
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs theme-text-muted">
+        <p>© 2026 Glow by the Art. All rights reserved.</p>
+        <p>Digital Download Policy • Instant Digital Delivery.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 4. PRODUCT DETAIL & INTERACTIVE PREVIEW MODAL (NO LICENSE TIER / PACKAGE OPTION) -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-xl transition-all duration-300">
+    <div id="lightboxContainer" class="relative w-full max-w-5xl max-h-[92vh] overflow-y-auto rounded-2xl theme-surface border theme-border shadow-2xl transition-colors duration-500">
+      <div class="sticky top-0 z-20 flex items-center justify-between px-6 py-4 theme-surface border-b theme-border">
+        <div class="flex items-center gap-3">
+          <span id="lbEditionBadge" class="px-3 py-1 rounded-md bg-crimson/15 border border-crimson/40 text-crimson text-xs font-bold uppercase">
+            Instant Download
+          </span>
+          <span id="lbCategoryBadge" class="text-xs theme-text-muted hidden sm:inline font-medium">Business & Strategy</span>
+          <a id="lbEtsyLink" href="#" target="_blank" rel="noopener noreferrer" class="hidden px-3 py-1 rounded-md theme-elevated border theme-border hover:border-crimson text-xs font-bold theme-text-primary hover:text-crimson transition-colors">
+            View on Etsy ↗
+          </a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <button id="glowModeToggle" onclick="toggleGlowMode()" class="flex items-center gap-2.5 px-4 py-2 rounded-full theme-elevated border theme-border hover:border-crimson/60 text-xs font-semibold transition-all">
+            <span id="glowIndicatorDot" class="w-2.5 h-2.5 rounded-full bg-crimson transition-all"></span>
+            <span id="glowModeLabel" class="theme-text-primary">Studio Preview: STANDARD</span>
+          </button>
+
+          <button onclick="closeLightbox()" class="p-2 rounded-full theme-elevated hover:bg-crimson hover:text-white theme-text-primary transition-colors" aria-label="Close Preview">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-8 items-center">
+        <div class="lg:col-span-6 flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl bg-[#121011] border border-white/10">
+          <div id="lbFrameWrapper" class="artwork-stage w-full max-w-sm rounded-lg overflow-hidden transition-all duration-300 border border-white/15">
+            <div id="lbArtworkCanvas" class="aspect-[4/5] w-full"></div>
+          </div>
+          <p id="lbGlowHint" class="text-xs text-[#E3DCDE]/75 mt-4 text-center">
+            Tip: Toggle <span class="text-crimson font-semibold">Crimson Darkroom Preview</span> above to inspect contrast.
+          </p>
+        </div>
+
+        <div class="lg:col-span-6 space-y-5">
+          <div>
+            <p id="lbArtist" class="text-xs uppercase tracking-[0.22em] text-crimson font-bold">Format & Compatibility</p>
+            <h2 id="lbTitle" class="font-sans text-2xl sm:text-3xl theme-text-primary font-extrabold mt-1">Product Title</h2>
+            <div class="flex items-baseline gap-3 mt-2">
+              <p id="lbPrice" class="text-2xl font-extrabold text-crimson">$14</p>
+              <p id="lbComparePrice" class="text-sm theme-text-muted line-through hidden">$24</p>
+            </div>
+          </div>
+
+          <p id="lbDescription" class="text-sm theme-text-secondary leading-relaxed">
+            Product description goes here.
+          </p>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-3">
+            <button onclick="addCurrentLightboxItemToCart()" class="flex-1 py-4 px-5 rounded-xl bg-gradient-to-r from-crimson to-burgundy text-white font-bold text-xs sm:text-sm tracking-wider uppercase shadow-[0_0_25px_rgba(224,62,62,0.4)] hover:brightness-110 transition-all flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
+              <span id="lbAddBtnText">Add to Bag — $14</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. SLIDE-OVER SHOPPING CART DRAWER -->
+  <div id="cartDrawerBackdrop" onclick="toggleCart(false)" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm transition-opacity duration-300"></div>
+  
+  <aside id="cartDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md theme-surface border-l theme-border shadow-2xl transform translate-x-full transition-transform duration-300 ease-out flex flex-col">
+    <div class="px-6 py-5 border-b theme-border flex items-center justify-between">
+      <div>
+        <h3 class="font-sans text-lg theme-text-primary font-extrabold uppercase tracking-wide">Your Digital Bag</h3>
+        <p id="cartHeaderSubtitle" class="text-xs theme-text-muted mt-0.5">0 items ready for instant download</p>
+      </div>
+      <button onclick="toggleCart(false)" class="p-2 rounded-full theme-elevated hover:bg-crimson hover:text-white theme-text-primary transition-colors" aria-label="Close Cart">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="px-6 py-3.5 theme-elevated border-b theme-border">
+      <div class="flex justify-between text-xs mb-1.5">
+        <span id="shippingProgressText" class="theme-text-secondary">Add $35+ to unlock VIP Creator Bonus Pack</span>
+        <span id="shippingProgressPct" class="text-crimson font-bold">0%</span>
+      </div>
+      <div class="w-full h-1.5 bg-black/15 dark:bg-white/10 rounded-full overflow-hidden">
+        <div id="shippingProgressBar" class="h-full bg-gradient-to-r from-crimson to-burgundy transition-all duration-500" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4"></div>
+
+    <div id="cartFooter" class="p-6 border-t theme-border theme-elevated space-y-4">
+      <div class="flex gap-2">
+        <input type="text" id="promoCodeInput" placeholder="Promo code (GLOW15, CREATOR20)" class="flex-1 px-3.5 py-2 rounded-xl theme-surface border theme-border text-xs theme-text-primary uppercase focus:outline-none focus:border-crimson" />
+        <button type="button" onclick="applyPromoCode()" class="px-4 py-2 rounded-xl bg-burgundy text-white text-xs font-bold uppercase tracking-wider hover:bg-crimson transition-colors">
+          Apply
+        </button>
+      </div>
+
+      <div class="space-y-1.5 text-sm">
+        <div class="flex justify-between theme-text-secondary">
+          <span>Subtotal</span>
+          <span id="cartRawSubtotal">$0.00</span>
+        </div>
+        <div id="cartDiscountRow" class="hidden flex justify-between text-crimson font-semibold">
+          <span id="cartDiscountLabel">Promo Discount</span>
+          <span id="cartDiscountAmount">-$0.00</span>
+        </div>
+        <div class="flex justify-between text-base font-extrabold theme-text-primary pt-2 border-t theme-border">
+          <span>Total (Instant Access)</span>
+          <span id="cartSubtotal" class="text-crimson">$0.00</span>
+        </div>
+      </div>
+
+      <button id="checkoutTriggerBtn" onclick="openCheckoutModal()" disabled class="w-full py-3.5 rounded-xl bg-gradient-to-r from-crimson to-burgundy text-white font-bold text-sm tracking-wider uppercase shadow-[0_0_25px_rgba(224,62,62,0.35)] hover:brightness-110 disabled:opacity-40 disabled:cursor-not-allowed transition-all">
+        Proceed to Secure Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- 6. CHECKOUT MODAL -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-xl">
+    <div class="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto rounded-2xl theme-surface border theme-border shadow-2xl p-6 sm:p-8">
+      <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 p-2 rounded-full theme-elevated hover:bg-crimson hover:text-white theme-text-primary" aria-label="Close Checkout">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div id="checkoutFormView">
+        <span class="text-xs uppercase tracking-[0.25em] text-crimson font-bold">Encrypted Digital Delivery</span>
+        <h3 class="font-sans text-2xl sm:text-3xl theme-text-primary font-extrabold mt-1 uppercase">Complete Your Order</h3>
+
+        <form onsubmit="submitOrder(event)" class="mt-6 space-y-5">
+          <div class="p-4 rounded-xl theme-elevated border theme-border">
+            <div class="flex justify-between items-center text-xs uppercase tracking-wider theme-text-muted font-bold mb-2">
+              <span>Order Summary</span>
+              <span id="checkoutItemCount">0 items</span>
+            </div>
+            <div id="checkoutSummaryList" class="space-y-1.5 text-sm theme-text-secondary max-h-32 overflow-y-auto"></div>
+            <div class="mt-3 pt-3 border-t theme-border flex justify-between font-extrabold theme-text-primary">
+              <span>Total Due</span>
+              <span id="checkoutTotalDisplay" class="text-crimson">$0.00</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs theme-text-muted font-semibold mb-1.5">Full Name</label>
+              <input type="text" id="custName" required placeholder="Marcus Vance" class="w-full px-3.5 py-2.5 rounded-xl theme-elevated border theme-border text-sm theme-text-primary focus:outline-none focus:border-crimson" />
+            </div>
+            <div>
+              <label class="block text-xs theme-text-muted font-semibold mb-1.5">Email for Download Link & Receipt</label>
+              <input type="email" id="custEmail" required placeholder="marcus@studio.com" class="w-full px-3.5 py-2.5 rounded-xl theme-elevated border theme-border text-sm theme-text-primary focus:outline-none focus:border-crimson" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs theme-text-muted font-semibold mb-2">Payment Method (Stripe Ready)</label>
+            <div class="grid grid-cols-2 gap-3 mb-3">
+              <button type="button" id="payTabCard" onclick="selectPaymentTab('card')" class="py-2.5 px-4 rounded-xl border border-crimson bg-crimson/15 theme-text-primary text-xs font-bold transition-all">
+                Credit / Debit Card
+              </button>
+              <button type="button" id="payTabWallet" onclick="selectPaymentTab('wallet')" class="py-2.5 px-4 rounded-xl border theme-border theme-elevated theme-text-muted text-xs font-bold hover:text-crimson transition-all">
+                Apple Pay / Link Express
+              </button>
+            </div>
+
+            <div id="cardPaymentFields" class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <input type="text" placeholder="Card Number •••• 4242" class="sm:col-span-2 px-3.5 py-2.5 rounded-xl theme-elevated border theme-border text-sm theme-text-primary focus:outline-none focus:border-crimson" />
+              <input type="text" placeholder="MM / YY  •  CVC" class="px-3.5 py-2.5 rounded-xl theme-elevated border theme-border text-sm theme-text-primary focus:outline-none focus:border-crimson" />
+            </div>
+
+            <div id="walletPaymentFields" class="hidden p-4 rounded-xl theme-elevated border theme-border text-xs theme-text-secondary text-center">
+              Express digital wallet authorization will generate your download token immediately.
+            </div>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-crimson to-burgundy text-white font-bold text-sm tracking-wider uppercase shadow-[0_0_30px_rgba(224,62,62,0.45)] hover:brightness-110 transition-all">
+            Pay & Unlock Digital Downloads
+          </button>
+        </form>
+      </div>
+
+      <div id="checkoutConfirmationView" class="hidden text-center py-6 space-y-5">
+        <div class="w-16 h-16 mx-auto rounded-full bg-crimson/20 border border-crimson flex items-center justify-center shadow-[0_0_30px_rgba(224,62,62,0.45)]">
+          <svg class="w-8 h-8 text-crimson" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+
+        <div>
+          <span id="orderReceiptNumber" class="px-3 py-1 rounded-md bg-crimson/15 border border-crimson/40 text-xs text-crimson font-mono font-bold">TOKEN: GBT-8492-1029</span>
+          <h3 class="font-sans text-2xl sm:text-3xl theme-text-primary font-extrabold mt-3 uppercase">Payment Confirmed</h3>
+          <p id="orderReceiptMessage" class="text-sm theme-text-secondary mt-2 max-w-md mx-auto leading-relaxed">
+            Your unique download access token is active. You can download your files immediately below.
+          </p>
+        </div>
+
+        <div id="receiptSummaryBox" class="p-4 rounded-xl theme-elevated border theme-border text-left text-xs theme-text-secondary space-y-1.5 max-w-md mx-auto"></div>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-3 pt-2">
+          <button onclick="closeCheckoutModal(); openDownloadsModal();" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-crimson to-burgundy text-white font-bold text-xs uppercase tracking-wider shadow-lg">
+            Open My Downloads
+          </button>
+          <button onclick="closeCheckoutModal()" class="px-7 py-3.5 rounded-xl theme-elevated border theme-border theme-text-primary font-semibold text-xs uppercase tracking-wider hover:border-crimson">
+            Continue Browsing
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROTECTED DIGITAL DOWNLOAD CENTER MODAL -->
+  <div id="downloadsModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-xl">
+    <div class="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl theme-surface border theme-border shadow-2xl p-6 sm:p-8">
+      <div class="flex items-center justify-between pb-4 border-b theme-border">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-crimson">Token-Gated Vault</span>
+          <h3 class="font-sans text-2xl font-extrabold theme-text-primary uppercase">My Digital Downloads</h3>
+        </div>
+        <button onclick="closeDownloadsModal()" class="p-2 rounded-full theme-elevated hover:bg-crimson hover:text-white theme-text-primary">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="downloadsListContainer" class="mt-6 space-y-4"></div>
+    </div>
+  </div>
+
+  <!-- STORE OWNER ADMIN PORTAL MODAL (PIN: 10102329) -->
+  <div id="adminModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-xl">
+    <div class="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl theme-surface border theme-border shadow-2xl p-6 sm:p-8">
+      <div class="flex items-center justify-between pb-4 border-b theme-border">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-crimson">Store Owner Console</span>
+          <h3 class="font-sans text-2xl font-extrabold theme-text-primary uppercase">Catalog & Bundle Management</h3>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="resetCatalogToDefault()" class="px-3 py-1.5 rounded-lg theme-elevated border theme-border hover:border-crimson text-[11px] font-bold uppercase tracking-wider theme-text-secondary hover:text-crimson transition-colors">
+            Reset Catalog & Bundle
+          </button>
+          <button onclick="closeAdminModal()" class="p-2 rounded-full theme-elevated hover:bg-crimson hover:text-white theme-text-primary">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin PIN Gate -->
+      <div id="adminPinGate" class="py-10 max-w-sm mx-auto text-center space-y-4">
+        <p class="text-sm theme-text-secondary">Enter Store Owner PIN to manage digital products and the bundle.</p>
+        <input type="password" id="adminPinInput" placeholder="Enter PIN" class="w-full px-4 py-3 rounded-xl theme-elevated border theme-border text-center text-sm theme-text-primary focus:outline-none focus:border-crimson" />
+        <button onclick="verifyAdminPin()" class="w-full py-3 rounded-xl bg-gradient-to-r from-crimson to-burgundy text-white font-bold text-xs uppercase tracking-wider">
+          Unlock Admin Console
+        </button>
+      </div>
+
+      <!-- Admin Dashboard Content -->
+      <div id="adminDashboardContent" class="hidden mt-6 space-y-8">
+        <!-- Bundle Editable Command Box -->
+        <div class="p-5 rounded-2xl theme-elevated border border-crimson/35 space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h4 class="text-sm font-extrabold uppercase tracking-wider text-crimson">Bundle Editable Command</h4>
+            <span id="adminBundleSummary" class="text-xs font-bold theme-text-primary">THE COMPLETE CREATOR BUNDLE — $49</span>
+          </div>
+          <p class="text-[11px] theme-text-muted">
+            Commands: <code class="text-crimson">/price 39</code> · <code class="text-crimson">/compare 79</code> · <code class="text-crimson">/title ...</code> · <code class="text-crimson">/desc ...</code> · <code class="text-crimson">/badge ...</code> · <code class="text-crimson">/items A | B | C | D</code> · <code class="text-crimson">/reset</code>
+          </p>
+          <div class="flex gap-2">
+            <input
+              id="bundleCmdInput"
+              type="text"
+              onkeydown="if(event.key==='Enter'){event.preventDefault();runBundleCommand();}"
+              placeholder="e.g. /price 39 or /title VIP ALL-IN-ONE BUNDLE"
+              class="flex-1 px-3.5 py-2 rounded-xl theme-surface border theme-border font-mono text-xs theme-text-primary focus:outline-none focus:border-crimson"
+            />
+            <button type="button" onclick="runBundleCommand()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-crimson to-burgundy text-white font-bold uppercase tracking-wider text-xs">
+              Run Command
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Add Product Form -->
+        <form onsubmit="adminAddProduct(event)" class="p-5 rounded-2xl theme-elevated border theme-border space-y-4">
+          <h4 class="text-sm font-extrabold uppercase tracking-wider text-crimson">+ Add New Digital Product</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <input type="text" id="newProdTitle" required placeholder="Product Title (same name = slide)" class="px-3.5 py-2.5 rounded-xl theme-surface border theme-border text-xs theme-text-primary" />
+            <select id="newProdCat" class="px-3.5 py-2.5 rounded-xl theme-surface border theme-border text-xs theme-text-primary">
+              <option value="Business & Strategy">Business & Strategy</option>
+              <option value="Content & Creator">Content & Creator</option>
+              <option value="Productivity">Productivity</option>
+              <option value="Money & Finance">Money & Finance</option>
+            </select>
+            <input type="number" id="newProdPrice" required min="1" step="0.01" placeholder="Price ($)" class="px-3.5 py-2.5 rounded-xl theme-surface border theme-border text-xs theme-text-primary" />
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <input type="text" id="newProdFormat" required placeholder="File Formats / Slide Label (e.g. Canva + PDF)" class="px-3.5 py-2.5 rounded-xl theme-surface border theme-border text-xs theme-text-primary" />
+            <input type="url" id="newProdImage" placeholder="Thumbnail Image URL (optional)" class="px-3.5 py-2.5 rounded-xl theme-surface border theme-border text-xs theme-text-primary" />
+            <button type="submit" class="py-2.5 px-4 rounded-xl bg-crimson text-white font-bold text-xs uppercase tracking-wider hover:bg-burgundy transition-colors">
+              Publish Product
+            </button>
+          </div>
+        </form>
+
+        <!-- Active Catalog List -->
+        <div>
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <h4 class="text-sm font-extrabold uppercase tracking-wider theme-text-primary">Active Digital Catalog (<span id="adminProdCount">0</span>)</h4>
+            <p class="text-[11px] theme-text-muted">Commands: <code class="text-crimson">/price 19</code> · <code class="text-crimson">/title ...</code> · <code class="text-crimson">/cat ...</code> · <code class="text-crimson">/bestseller true</code> · <code class="text-crimson">/format ...</code> · <code class="text-crimson">/image https://...</code> · <code class="text-crimson">/etsy https://...</code></p>
+          </div>
+          <div id="adminProductsList" class="space-y-3 max-h-96 overflow-y-auto pr-1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 translate-y-4 transition-all duration-300">
+    <div class="px-5 py-3 rounded-full theme-surface backdrop-blur-md border border-crimson/60 shadow-[0_0_25px_rgba(224,62,62,0.35)] flex items-center gap-2.5 text-sm theme-text-primary font-medium">
+      <span class="w-2 h-2 rounded-full bg-crimson"></span>
+      <span id="toastMessage">Added to Bag</span>
+    </div>
+  </div>
+
+  <script>
+    const ADMIN_PIN = "10102329";
+    const ETSY_THUMBNAIL = "https://i.etsystatic.com/68794678/r/il/4d4c6f/8794324890/il_570xN.8794324890_f166.jpg";
+
+    const DEFAULT_BUNDLE = {
+      id: "bundle-creator",
+      badge: "Save 45% • All-Access Vault",
+      title: "THE COMPLETE CREATOR BUNDLE",
+      description: "Everything you need to plan, design, publish, and scale. Includes flagship templates, pitch decks, planners, and social media toolkits in one instant download.",
+      price: 49,
+      comparePrice: 82,
+      subtitle: "Instant ZIP + Notion & Canva Links",
+      items: [
+        { tag: "01 • STRATEGY", label: "Pitch Deck & Business Forms" },
+        { tag: "02 • PLANNER", label: "Everyday & Weekly Systems" },
+        { tag: "03 • CREATOR", label: "Social Story & Highlight Kits" },
+        { tag: "04 • SPECIALTY", label: "Busy Books & Invite Suite" }
+      ]
+    };
+
+    // Placeholder prices ($12, $14, $9, $16) on Etsy entries can be edited in the Store Owner Console.
+    const DEFAULT_PRODUCTS = [
+      {
+        id: 101,
+        title: "Convenient, Editable, and Printable Business Forms",
+        artist: "Contract & Agreement Templates • GlowbytheArt on Etsy",
+        category: "Business & Strategy",
+        edition: "Etsy Listing",
+        bestseller: true,
+        basePrice: 12,
+        comparePrice: null,
+        imageUrl: ETSY_THUMBNAIL,
+        etsyUrl: "https://glowbyteart.etsy.com/listing/4602886897/convenient-editable-and-printable",
+        description: "Editable and printable business contract and agreement templates listed by GlowbytheArt on Etsy (listed Oct 25, 2026).",
+        palette: ["#6E232B", "#E03E3E", "#E3DCDE"],
+        artStyle: "waves"
+      },
+      {
+        id: 102,
+        title: "Modern, Editable Canva Pitch Deck | Business Proposal",
+        artist: "Canva Presentation Template • GlowbytheArt on Etsy",
+        category: "Business & Strategy",
+        edition: "Etsy Listing",
+        bestseller: true,
+        basePrice: 14,
+        comparePrice: null,
+        imageUrl: ETSY_THUMBNAIL,
+        etsyUrl: "https://www.etsy.com/nz/listing/4607450473/modern-editable-canva-pitch-deck",
+        description: "Editable Canva pitch deck and business proposal template listed by GlowbytheArt on Etsy (listed Nov 1, 2026).",
+        palette: ["#E03E3E", "#F9F6F6", "#6E232B"],
+        artStyle: "ribbons"
+      },
+      {
+        id: 103,
+        title: "Minimal Blue Business Proposal Template",
+        artist: "Editorial Proposal & PPT Template • GlowbytheArt on Etsy",
+        category: "Business & Strategy",
+        edition: "Etsy Listing",
+        bestseller: false,
+        basePrice: 9,
+        comparePrice: null,
+        imageUrl: ETSY_THUMBNAIL,
+        etsyUrl: "https://www.etsy.com/ie/listing/4611619494/minimal-blue-powerpoint-template-ppt",
+        description: "Editorial business proposal presentation template listed by GlowbytheArt on Etsy (listed Nov 6, 2026).",
+        palette: ["#6E232B", "#E03E3E", "#F9F6F6"],
+        artStyle: "monolith"
+      },
+      {
+        id: 104,
+        title: "Makeup Artist Booking Website Template",
+        artist: "Appointment & Booking Site Template • GlowbytheArt on Etsy",
+        category: "Content & Creator",
+        edition: "Etsy Listing",
+        bestseller: false,
+        basePrice: 16,
+        comparePrice: null,
+        imageUrl: ETSY_THUMBNAIL,
+        etsyUrl: "https://www.etsy.com/se/listing/4614585604/webbplatsmall-for-makeupartist-acuity",
+        description: "Scheduling and booking website template for makeup artists listed by GlowbytheArt on Etsy (listed Nov 13, 2026).",
+        palette: ["#E03E3E", "#6E232B", "#E3DCDE"],
+        artStyle: "halo"
+      },
+      {
+        id: 1,
+        title: "The Everyday Digital Planner",
+        artist: "Hyperlinked PDF • GoodNotes & Notability",
+        category: "Productivity",
+        edition: "Bestseller",
+        bestseller: true,
+        basePrice: 12,
+        comparePrice: 19,
+        imageUrl: ETSY_THUMBNAIL,
+        description: "Dated & undated daily, weekly, and quarterly executive planning architecture with 420+ hyperlinked tabs, habit matrices, and goal sprints.",
+        palette: ["#E03E3E", "#6E232B", "#E3DCDE"],
+        artStyle: "monolith"
+      },
+      {
+        id: 7,
+        title: "Soft Minimal Weekly Planner",
+        artist: "Printable A4/Letter & iPad PDF",
+        category: "Money & Finance",
+        edition: "Budget & Ops",
+        bestseller: false,
+        basePrice: 5,
+        comparePrice: 10,
+        imageUrl: ETSY_THUMBNAIL,
+        description: "Streamlined weekly priority tracker paired with a 7-day cashflow ledger and subscription audit sheet.",
+        palette: ["#6E232B", "#E3DCDE", "#E03E3E"],
+        artStyle: "nebula"
+      },
+      {
+        id: 8,
+        title: "Romantic Wedding Invitation Suite",
+        artist: "12 Print & Digital Cards • Canva & PDF",
+        category: "Content & Creator",
+        edition: "Luxury Suite",
+        bestseller: true,
+        basePrice: 16,
+        comparePrice: 28,
+        imageUrl: ETSY_THUMBNAIL,
+        description: "Complete editorial stationery suite including Save the Date, main invitation, RSVP card, menu, and monogram crest templates.",
+        palette: ["#6E232B", "#E03E3E", "#F9F6F6"],
+        artStyle: "jellyfish"
+      }
+    ];
+
+    const PROMO_CODES = {
+      "GLOW15": 0.15,
+      "CREATOR20": 0.20,
+      "SAVE5": 5
+    };
+
+    let ARTWORKS = JSON.parse(localStorage.getItem("glowByTheArtCatalog")) || JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+    let BUNDLE = JSON.parse(localStorage.getItem("glowByTheArtBundle")) || JSON.parse(JSON.stringify(DEFAULT_BUNDLE));
+    let slideIndices = {};
+    let editingProductId = null;
+    let activeCategory = "All Works";
+    let cart = JSON.parse(localStorage.getItem("glowByTheArtCart") || "[]");
+    let orders = JSON.parse(localStorage.getItem("glowByTheArtOrders") || "[]");
+    let appliedPromo = null;
+    let currentLightboxArt = null;
+    let isGlowModeOn = false;
+
+    function normalizeTitle(title) {
+      return (title || "").trim().toLowerCase().replace(/\s+/g, " ");
+    }
+
+    // Group items with the exact same normalized title into one catalog slide stack
+    function groupProductsByName(items) {
+      const groups = [];
+      const map = new Map();
+
+      items.forEach(item => {
+        const key = normalizeTitle(item.title);
+        if (!map.has(key)) {
+          const group = { groupKey: key, items: [item] };
+          map.set(key, group);
+          groups.push(group);
+        } else {
+          map.get(key).items.push(item);
+        }
+      });
+
+      return groups;
+    }
+
+    function renderThumbnail(art) {
+      if (art.imageUrl) {
+        return `<img src="${art.imageUrl}" alt="${art.title.replace(/"/g, "&quot;")}" class="w-full h-full object-cover block" />`;
+      }
+      return `<img src="${ETSY_THUMBNAIL}" alt="${art.title.replace(/"/g, "&quot;")}" class="w-full h-full object-cover block" />`;
+    }
+
+    function syncThemeUI() {
+      const isDark = document.documentElement.classList.contains("dark");
+      const thumb = document.getElementById("themeToggleThumb");
+      const btn = document.getElementById("themeToggleBtn");
+      if (!thumb || !btn) return;
+      thumb.classList.toggle("translate-x-7", isDark);
+      thumb.classList.toggle("translate-x-0", !isDark);
+      btn.setAttribute("aria-checked", String(isDark));
+    }
+
+    function toggleTheme() {
+      const htmlEl = document.documentElement;
+      const willBeDark = !htmlEl.classList.contains("dark");
+      htmlEl.classList.toggle("dark", willBeDark);
+      localStorage.setItem("glowByTheArtTheme", willBeDark ? "dark" : "light");
+      syncThemeUI();
+      showToast(willBeDark ? "Dark Obsidian Theme Active" : "Light Alabaster Theme Active");
+    }
+
+    function renderBundleSection() {
+      document.getElementById("bundleBadge").textContent = BUNDLE.badge;
+      document.getElementById("bundleTitle").textContent = BUNDLE.title;
+      document.getElementById("bundleDescription").textContent = BUNDLE.description;
+      document.getElementById("bundlePrice").textContent = `$${BUNDLE.price}`;
+
+      const compareEl = document.getElementById("bundleComparePrice");
+      if (BUNDLE.comparePrice && Number(BUNDLE.comparePrice) > 0) {
+        compareEl.textContent = `$${BUNDLE.comparePrice}`;
+        compareEl.classList.remove("hidden");
+      } else {
+        compareEl.classList.add("hidden");
+      }
+
+      document.getElementById("bundleSubtitle").textContent = BUNDLE.subtitle;
+      document.getElementById("bundleCtaBtn").textContent = `GET THE BUNDLE — $${BUNDLE.price}`;
+
+      const grid = document.getElementById("bundleItemsGrid");
+      grid.innerHTML = (BUNDLE.items || []).map(it => `
+        <div class="p-3.5 rounded-xl bg-[#221D1F] border border-white/5">
+          <p class="text-xs font-bold text-crimson">${it.tag}</p>
+          <p class="text-sm font-semibold text-white mt-1">${it.label}</p>
+        </div>
+      `).join("");
+
+      const adminSummary = document.getElementById("adminBundleSummary");
+      if (adminSummary) {
+        adminSummary.textContent = `${BUNDLE.title} — $${BUNDLE.price}`;
+      }
+    }
+
+    function changeSlide(groupKey, delta, totalSlides) {
+      const current = slideIndices[groupKey] || 0;
+      slideIndices[groupKey] = (current + delta + totalSlides) % totalSlides;
+      applyFilters();
+    }
+
+    function setSlideIndex(groupKey, idx) {
+      slideIndices[groupKey] = idx;
+      applyFilters();
+    }
+
+    function renderGallery(items) {
+      const grid = document.getElementById("galleryGrid");
+      const emptyState = document.getElementById("emptyGalleryState");
+
+      if (items.length === 0) {
+        grid.innerHTML = "";
+        emptyState.classList.remove("hidden");
+        return;
+      }
+
+      emptyState.classList.add("hidden");
+      const groups = groupProductsByName(items);
+
+      grid.innerHTML = groups.map(group => {
+        const slides = group.items;
+        const idx = (slideIndices[group.groupKey] || 0) % slides.length;
+        const art = slides[idx];
+        const hasSlides = slides.length > 1;
+        const encodedKey = encodeURIComponent(group.groupKey);
+
+        return `
+          <article class="art-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+            <div>
+              <div class="relative aspect-[4/5] w-full overflow-hidden bg-[#121011]">
+                <div onclick="openLightbox(${art.id}, false)" class="w-full h-full cursor-pointer transform group-hover:scale-105 transition-transform duration-700 ease-out">
+                  ${renderThumbnail(art)}
+                </div>
+
+                <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md ${art.bestseller ? 'bg-crimson text-white' : 'bg-[#121011]/85 text-[#E3DCDE] border border-white/15'} text-[10px] font-bold uppercase tracking-wider pointer-events-none">
+                  ${art.edition}
+                </span>
+
+                ${hasSlides ? `
+                  <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-[#121011]/85 border border-crimson/40 text-[10px] font-mono font-bold text-[#F9F6F6] pointer-events-none">
+                    ${idx + 1}/${slides.length}
+                  </span>
+                  <button type="button" onclick="event.stopPropagation(); changeSlide(decodeURIComponent('${encodedKey}'), -1, ${slides.length})" aria-label="Previous slide" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#121011]/80 hover:bg-crimson text-white flex items-center justify-center border border-white/15 transition-colors">
+                    ‹
+                  </button>
+                  <button type="button" onclick="event.stopPropagation(); changeSlide(decodeURIComponent('${encodedKey}'), 1, ${slides.length})" aria-label="Next slide" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#121011]/80 hover:bg-crimson text-white flex items-center justify-center border border-white/15 transition-colors">
+                    ›
+                  </button>
+                  <div class="absolute bottom-3 inset-x-0 flex items-center justify-center gap-1.5">
+                    ${slides.map((_, sIdx) => `
+                      <button type="button" onclick="event.stopPropagation(); setSlideIndex(decodeURIComponent('${encodedKey}'), ${sIdx})" aria-label="Slide ${sIdx + 1}" class="w-2 h-2 rounded-full transition-all ${sIdx === idx ? 'bg-crimson w-4' : 'bg-white/50 hover:bg-white'}"></button>
+                    `).join("")}
+                  </div>
+                ` : ""}
+              </div>
+
+              <div class="p-5 pb-2">
+                <div class="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-crimson mb-1">
+                  <span>${art.category}</span>
+                  ${art.etsyUrl ? `<a href="${art.etsyUrl}" target="_blank" rel="noopener noreferrer" class="hover:underline">Etsy ↗</a>` : ''}
+                </div>
+                <h3 onclick="openLightbox(${art.id}, false)" class="font-sans text-lg theme-text-primary font-extrabold cursor-pointer hover:text-crimson transition-colors leading-snug">
+                  ${art.title}
+                </h3>
+                <p class="text-xs theme-text-muted mt-1 truncate">${art.artist}</p>
+              </div>
+            </div>
+
+            <div class="px-5 pb-5 pt-3 flex items-center justify-between gap-2">
+              <div class="flex items-baseline gap-2">
+                <span class="text-xl font-extrabold text-crimson">$${art.basePrice}</span>
+                ${art.comparePrice ? `<span class="text-xs theme-text-muted line-through">$${art.comparePrice}</span>` : ''}
+              </div>
+
+              <button onclick="quickAddToCart(${art.id})" class="px-3.5 py-2 rounded-xl theme-elevated hover:bg-gradient-to-r hover:from-crimson hover:to-burgundy border theme-border hover:border-transparent text-xs font-bold uppercase tracking-wider theme-text-primary hover:text-white transition-all duration-200 flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+                <span>Add</span>
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function jumpToCategory(cat) {
+      setCategory(cat);
+      document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function filterBestsellersQuick() {
+      document.getElementById("sortSelect").value = "bestsellers";
+      setCategory("All Works");
+      document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function setCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll(".filter-pill").forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.className = "filter-pill active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all bg-gradient-to-r from-crimson to-burgundy text-white shadow-[0_0_20px_rgba(224,62,62,0.35)]";
+        } else {
+          btn.className = "filter-pill px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all theme-surface border theme-border theme-text-secondary hover:text-crimson hover:border-crimson/50";
+        }
+      });
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const query = document.getElementById("searchInput").value.trim().toLowerCase();
+      const sortMode = document.getElementById("sortSelect").value;
+
+      let filtered = ARTWORKS.filter(art => {
+        const matchesCat = activeCategory === "All Works" || art.category === activeCategory;
+        const matchesQuery = !query ||
+          art.title.toLowerCase().includes(query) ||
+          art.artist.toLowerCase().includes(query) ||
+          art.category.toLowerCase().includes(query);
+        return matchesCat && matchesQuery;
+      });
+
+      if (sortMode === "price-asc") {
+        filtered.sort((a, b) => a.basePrice - b.basePrice);
+      } else if (sortMode === "price-desc") {
+        filtered.sort((a, b) => b.basePrice - a.basePrice);
+      } else if (sortMode === "bestsellers") {
+        filtered.sort((a, b) => (b.bestseller ? 1 : 0) - (a.bestseller ? 1 : 0));
+      }
+
+      renderGallery(filtered);
+    }
+
+    function resetFilters() {
+      document.getElementById("searchInput").value = "";
+      document.getElementById("sortSelect").value = "featured";
+      setCategory("All Works");
+    }
+
+    function openLightbox(artId, startInGlowMode = false) {
+      const art = ARTWORKS.find(a => a.id === artId);
+      if (!art) return;
+
+      currentLightboxArt = art;
+      isGlowModeOn = startInGlowMode;
+
+      document.getElementById("lbEditionBadge").textContent = art.edition;
+      document.getElementById("lbCategoryBadge").textContent = art.category;
+      document.getElementById("lbArtist").textContent = art.artist;
+      document.getElementById("lbTitle").textContent = art.title;
+      document.getElementById("lbDescription").textContent = art.description;
+      document.getElementById("lbArtworkCanvas").innerHTML = renderThumbnail(art);
+      document.getElementById("lbPrice").textContent = `$${art.basePrice}`;
+      document.getElementById("lbAddBtnText").textContent = `Add to Bag — $${art.basePrice}`;
+
+      const etsyLink = document.getElementById("lbEtsyLink");
+      if (art.etsyUrl) {
+        etsyLink.href = art.etsyUrl;
+        etsyLink.classList.remove("hidden");
+      } else {
+        etsyLink.classList.add("hidden");
+      }
+
+      const compareEl = document.getElementById("lbComparePrice");
+      if (art.comparePrice) {
+        compareEl.textContent = `$${art.comparePrice}`;
+        compareEl.classList.remove("hidden");
+      } else {
+        compareEl.classList.add("hidden");
+      }
+
+      updateGlowModeUI();
+
+      const modal = document.getElementById("lightboxModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById("lightboxModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.style.overflow = "";
+    }
+
+    function toggleGlowMode() {
+      isGlowModeOn = !isGlowModeOn;
+      updateGlowModeUI();
+    }
+
+    function updateGlowModeUI() {
+      const container = document.getElementById("lightboxContainer");
+      const dot = document.getElementById("glowIndicatorDot");
+      const label = document.getElementById("glowModeLabel");
+
+      if (isGlowModeOn) {
+        container.classList.add("glow-room-active");
+        dot.className = "w-2.5 h-2.5 rounded-full bg-crimson shadow-[0_0_10px_#E03E3E]";
+        label.textContent = "Crimson Darkroom: ACTIVE";
+        label.className = "text-crimson font-bold";
+      } else {
+        container.classList.remove("glow-room-active");
+        dot.className = "w-2.5 h-2.5 rounded-full bg-burgundy";
+        label.textContent = "Studio Preview: STANDARD";
+        label.className = "theme-text-primary font-semibold";
+      }
+    }
+
+    function quickAddToCart(artId) {
+      const art = ARTWORKS.find(a => a.id === artId);
+      if (!art) return;
+      addToCartItem({
+        artId: art.id,
+        title: art.title,
+        artist: art.artist,
+        unitPrice: art.basePrice
+      });
+    }
+
+    function addBundleToCart() {
+      addToCartItem({
+        artId: BUNDLE.id,
+        title: BUNDLE.title,
+        artist: BUNDLE.subtitle,
+        unitPrice: Number(BUNDLE.price) || 49
+      });
+      toggleCart(true);
+    }
+
+    function addCurrentLightboxItemToCart() {
+      if (!currentLightboxArt) return;
+      addToCartItem({
+        artId: currentLightboxArt.id,
+        title: currentLightboxArt.title,
+        artist: currentLightboxArt.artist,
+        unitPrice: currentLightboxArt.basePrice
+      });
+      closeLightbox();
+      toggleCart(true);
+    }
+
+    function addToCartItem(newItem) {
+      const key = `${newItem.artId}-${newItem.title}`;
+      const existing = cart.find(item => item.key === key);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...newItem, key, qty: 1 });
+      }
+      saveAndRenderCart();
+      showToast(`"${newItem.title}" added to bag`);
+    }
+
+    function updateCartQty(key, delta) {
+      const idx = cart.findIndex(item => item.key === key);
+      if (idx === -1) return;
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) cart.splice(idx, 1);
+      saveAndRenderCart();
+    }
+
+    function removeCartItem(key) {
+      cart = cart.filter(item => item.key !== key);
+      saveAndRenderCart();
+    }
+
+    function applyPromoCode() {
+      const code = document.getElementById("promoCodeInput").value.trim().toUpperCase();
+      if (PROMO_CODES[code] !== undefined) {
+        appliedPromo = { code, value: PROMO_CODES[code] };
+        saveAndRenderCart();
+        showToast(`Promo code ${code} applied!`);
+      } else {
+        showToast("Invalid code — try GLOW15 or CREATOR20");
+      }
+    }
+
+    function computeCartTotals() {
+      const rawSubtotal = cart.reduce((sum, item) => sum + item.unitPrice * item.qty, 0);
+      let discount = 0;
+      if (appliedPromo && rawSubtotal > 0) {
+        discount = appliedPromo.value < 1
+          ? +(rawSubtotal * appliedPromo.value).toFixed(2)
+          : Math.min(rawSubtotal, appliedPromo.value);
+      }
+      const finalTotal = Math.max(0, +(rawSubtotal - discount).toFixed(2));
+      return { rawSubtotal, discount, finalTotal };
+    }
+
+    function saveAndRenderCart() {
+      localStorage.setItem("glowByTheArtCart", JSON.stringify(cart));
+
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      const { rawSubtotal, discount, finalTotal } = computeCartTotals();
+      const bonusThreshold = 35;
+
+      const badge = document.getElementById("cartCountBadge");
+      badge.textContent = totalCount;
+      badge.classList.add("scale-125");
+      setTimeout(() => badge.classList.remove("scale-125"), 200);
+
+      document.getElementById("cartHeaderSubtitle").textContent = `${totalCount} ${totalCount === 1 ? 'digital system' : 'digital systems'} ready`;
+
+      const pct = Math.min(100, Math.round((rawSubtotal / bonusThreshold) * 100));
+      document.getElementById("shippingProgressBar").style.width = `${pct}%`;
+      document.getElementById("shippingProgressPct").textContent = `${pct}%`;
+
+      if (rawSubtotal >= bonusThreshold) {
+        document.getElementById("shippingProgressText").innerHTML = `<span class="text-crimson font-bold">VIP Creator Bonus Pack unlocked!</span>`;
+      } else {
+        const remaining = bonusThreshold - rawSubtotal;
+        document.getElementById("shippingProgressText").textContent = `Add $${remaining} more to unlock VIP Creator Bonus Pack`;
+      }
+
+      const container = document.getElementById("cartItemsContainer");
+      const checkoutBtn = document.getElementById("checkoutTriggerBtn");
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="h-full flex flex-col items-center justify-center text-center py-12">
+            <div class="w-14 h-14 rounded-full theme-elevated border theme-border flex items-center justify-center theme-text-muted mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+            <p class="font-sans text-lg theme-text-primary font-bold">Your Digital Bag is Empty</p>
+            <p class="text-xs theme-text-muted mt-1 max-w-xs">Select pitch decks, planners, or creator kits for instant download.</p>
+          </div>
+        `;
+        checkoutBtn.disabled = true;
+      } else {
+        checkoutBtn.disabled = false;
+        container.innerHTML = cart.map(item => {
+          const art = ARTWORKS.find(a => a.id === item.artId) || { title: item.title, imageUrl: ETSY_THUMBNAIL };
+          return `
+            <div class="flex gap-4 p-3.5 rounded-xl theme-elevated border theme-border">
+              <div class="w-16 h-20 rounded-lg overflow-hidden shrink-0 border border-white/10 bg-[#121011]">
+                ${renderThumbnail(art)}
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-start gap-2">
+                  <h4 class="font-sans text-sm theme-text-primary font-bold truncate">${item.title}</h4>
+                  <button onclick="removeCartItem('${item.key}')" class="theme-text-muted hover:text-crimson transition-colors" aria-label="Remove item">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <p class="text-[11px] theme-text-muted mt-0.5 truncate">${item.artist}</p>
+                <div class="flex items-center justify-between mt-3">
+                  <div class="inline-flex items-center rounded-lg theme-surface border theme-border">
+                    <button onclick="updateCartQty('${item.key}', -1)" class="px-2.5 py-1 text-xs theme-text-secondary hover:text-crimson">−</button>
+                    <span class="px-2 text-xs font-bold theme-text-primary">${item.qty}</span>
+                    <button onclick="updateCartQty('${item.key}', 1)" class="px-2.5 py-1 text-xs theme-text-secondary hover:text-crimson">+</button>
+                  </div>
+                  <span class="text-sm font-extrabold text-crimson">$${(item.unitPrice * item.qty).toFixed(2)}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join("");
+      }
+
+      document.getElementById("cartRawSubtotal").textContent = `$${rawSubtotal.toFixed(2)}`;
+      const discountRow = document.getElementById("cartDiscountRow");
+      if (discount > 0 && appliedPromo) {
+        discountRow.classList.remove("hidden");
+        document.getElementById("cartDiscountLabel").textContent = `Promo (${appliedPromo.code})`;
+        document.getElementById("cartDiscountAmount").textContent = `-$${discount.toFixed(2)}`;
+      } else {
+        discountRow.classList.add("hidden");
+      }
+      document.getElementById("cartSubtotal").textContent = `$${finalTotal.toFixed(2)}`;
+    }
+
+    function toggleCart(open) {
+      const drawer = document.getElementById("cartDrawer");
+      const backdrop = document.getElementById("cartDrawerBackdrop");
+      if (open) {
+        backdrop.classList.remove("hidden");
+        drawer.classList.remove("translate-x-full");
+        document.body.style.overflow = "hidden";
+      } else {
+        drawer.classList.add("translate-x-full");
+        backdrop.classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+    }
+
+    function openCheckoutModal() {
+      toggleCart(false);
+      const { finalTotal } = computeCartTotals();
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+
+      document.getElementById("checkoutItemCount").textContent = `${count} ${count === 1 ? 'item' : 'items'}`;
+      document.getElementById("checkoutTotalDisplay").textContent = `$${finalTotal.toFixed(2)}`;
+      document.getElementById("checkoutSummaryList").innerHTML = cart.map(item => `
+        <div class="flex justify-between">
+          <span>${item.qty}× ${item.title}</span>
+          <span class="theme-text-primary font-bold">$${(item.unitPrice * item.qty).toFixed(2)}</span>
+        </div>
+      `).join("");
+
+      document.getElementById("checkoutFormView").classList.remove("hidden");
+      document.getElementById("checkoutConfirmationView").classList.add("hidden");
+
+      const modal = document.getElementById("checkoutModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeCheckoutModal() {
+      const modal = document.getElementById("checkoutModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.style.overflow = "";
+    }
+
+    function selectPaymentTab(tab) {
+      const cardTab = document.getElementById("payTabCard");
+      const walletTab = document.getElementById("payTabWallet");
+      const cardFields = document.getElementById("cardPaymentFields");
+      const walletFields = document.getElementById("walletPaymentFields");
+
+      if (tab === "card") {
+        cardTab.className = "py-2.5 px-4 rounded-xl border border-crimson bg-crimson/15 theme-text-primary text-xs font-bold transition-all";
+        walletTab.className = "py-2.5 px-4 rounded-xl border theme-border theme-elevated theme-text-muted text-xs font-bold hover:text-crimson transition-all";
+        cardFields.classList.remove("hidden");
+        walletFields.classList.add("hidden");
+      } else {
+        walletTab.className = "py-2.5 px-4 rounded-xl border border-crimson bg-crimson/15 theme-text-primary text-xs font-bold transition-all";
+        cardTab.className = "py-2.5 px-4 rounded-xl border theme-border theme-elevated theme-text-muted text-xs font-bold hover:text-crimson transition-all";
+        walletFields.classList.remove("hidden");
+        cardFields.classList.add("hidden");
+      }
+    }
+
+    function submitOrder(event) {
+      event.preventDefault();
+      const name = document.getElementById("custName").value.trim();
+      const email = document.getElementById("custEmail").value.trim();
+      const token = `GBT-${Math.floor(1000 + Math.random() * 9000)}-${Math.floor(1000 + Math.random() * 9000)}`;
+      const { finalTotal } = computeCartTotals();
+
+      const newOrder = {
+        token,
+        customerName: name,
+        customerEmail: email,
+        date: new Date().toLocaleDateString(),
+        total: finalTotal,
+        items: [...cart]
+      };
+
+      orders.unshift(newOrder);
+      localStorage.setItem("glowByTheArtOrders", JSON.stringify(orders));
+      updateDownloadBadge();
+
+      document.getElementById("orderReceiptNumber").textContent = `ACCESS TOKEN: ${token}`;
+      document.getElementById("orderReceiptMessage").textContent = `Thank you, ${name}. Your protected files are unlocked and a backup receipt has been queued for ${email}.`;
+      document.getElementById("receiptSummaryBox").innerHTML = `
+        <p><strong class="theme-text-primary">Access Token:</strong> <span class="font-mono text-crimson font-bold">${token}</span></p>
+        <p><strong class="theme-text-primary">Unlocked Files:</strong> ${cart.map(i => `${i.qty}× ${i.title}`).join(", ")}</p>
+        <p><strong class="theme-text-primary">Total Paid:</strong> <span class="text-crimson font-extrabold">$${finalTotal.toFixed(2)}</span></p>
+      `;
+
+      cart = [];
+      appliedPromo = null;
+      saveAndRenderCart();
+
+      document.getElementById("checkoutFormView").classList.add("hidden");
+      document.getElementById("checkoutConfirmationView").classList.remove("hidden");
+    }
+
+    function updateDownloadBadge() {
+      const badge = document.getElementById("navDownloadBadge");
+      if (!badge) return;
+      if (orders.length > 0) {
+        badge.textContent = orders.length;
+        badge.classList.remove("hidden");
+      } else {
+        badge.classList.add("hidden");
+      }
+    }
+
+    function openDownloadsModal() {
+      const container = document.getElementById("downloadsListContainer");
+      if (orders.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 theme-elevated rounded-2xl border theme-border">
+            <p class="font-bold theme-text-primary">No Paid Orders Found</p>
+            <p class="text-xs theme-text-muted mt-1">Complete a purchase to generate your unique <code class="text-crimson">GBT-XXXX-XXXX</code> download access link.</p>
+          </div>
+        `;
+      } else {
+        container.innerHTML = orders.map(ord => `
+          <div class="p-5 rounded-2xl theme-elevated border theme-border space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b theme-border">
+              <div>
+                <span class="text-xs font-mono font-bold text-crimson">${ord.token}</span>
+                <p class="text-xs theme-text-muted">Issued to ${ord.customerEmail} • ${ord.date}</p>
+              </div>
+              <span class="px-2.5 py-1 rounded bg-crimson/15 text-crimson text-xs font-bold">PAID • $${ord.total.toFixed(2)}</span>
+            </div>
+            <div class="space-y-2">
+              ${ord.items.map(it => `
+                <div class="flex items-center justify-between gap-3 p-3 rounded-xl theme-surface border theme-border">
+                  <div>
+                    <p class="text-sm font-bold theme-text-primary">${it.title}</p>
+                    <p class="text-[11px] theme-text-muted">${it.artist}</p>
+                  </div>
+                  <button onclick="triggerProtectedDownload('${ord.token}', '${it.title.replace(/'/g, "")}')" class="px-4 py-2 rounded-lg bg-gradient-to-r from-crimson to-burgundy text-white text-xs font-bold uppercase tracking-wider hover:brightness-110">
+                    Download ZIP
+                  </button>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+        `).join("");
+      }
+
+      const modal = document.getElementById("downloadsModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDownloadsModal() {
+      const modal = document.getElementById("downloadsModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.style.overflow = "";
+    }
+
+    function triggerProtectedDownload(token, title) {
+      const content = `GLOW BY THE ART — VERIFIED DIGITAL LICENSE & ASSET MANIFEST\nAccess Token: ${token}\nProduct: ${title}\nIssued: ${new Date().toISOString()}\n\nThank you for your purchase. Your template files are unlocked under this verified order token.`;
+      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${title.replace(/\s+/g, "_")}_${token}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast(`Verified download started for ${title}`);
+    }
+
+    // Store Owner Admin Console (PIN: 10102329)
+    function openAdminModal() {
+      const modal = document.getElementById("adminModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+      renderBundleSection();
+      renderAdminProducts();
+    }
+
+    function closeAdminModal() {
+      const modal = document.getElementById("adminModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.style.overflow = "";
+    }
+
+    function verifyAdminPin() {
+      const pin = document.getElementById("adminPinInput").value.trim();
+      if (pin === ADMIN_PIN) {
+        document.getElementById("adminPinGate").classList.add("hidden");
+        document.getElementById("adminDashboardContent").classList.remove("hidden");
+        renderBundleSection();
+        renderAdminProducts();
+        showToast("Admin Console Unlocked");
+      } else {
+        showToast("Incorrect PIN");
+      }
+    }
+
+    function persistState() {
+      localStorage.setItem("glowByTheArtCatalog", JSON.stringify(ARTWORKS));
+      localStorage.setItem("glowByTheArtBundle", JSON.stringify(BUNDLE));
+      renderBundleSection();
+      applyFilters();
+      renderAdminProducts();
+    }
+
+    function resetCatalogToDefault() {
+      ARTWORKS = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+      BUNDLE = JSON.parse(JSON.stringify(DEFAULT_BUNDLE));
+      slideIndices = {};
+      editingProductId = null;
+      persistState();
+      showToast("Catalog and bundle reset to default");
+    }
+
+    function runBundleCommand() {
+      const input = document.getElementById("bundleCmdInput");
+      if (!input) return;
+      const raw = input.value.trim();
+      if (!raw) return;
+
+      const match = raw.match(/^\/([a-zA-Z]+)\s*(.*)$/);
+      if (!match) {
+        showToast("Use /price, /compare, /title, /desc, /badge, /items, or /reset");
+        return;
+      }
+
+      const verb = match[1].toLowerCase();
+      const arg = match[2].trim();
+
+      if (verb === "price") {
+        const num = parseFloat(arg);
+        if (Number.isNaN(num) || num < 0) { showToast("Invalid bundle price"); return; }
+        BUNDLE.price = num;
+        showToast(`Bundle price set to $${num}`);
+      } else if (verb === "compare") {
+        const num = parseFloat(arg);
+        BUNDLE.comparePrice = (!arg || Number.isNaN(num) || num <= 0) ? null : num;
+        showToast(BUNDLE.comparePrice ? `Bundle compare price set to $${BUNDLE.comparePrice}` : "Cleared bundle compare price");
+      } else if (verb === "title") {
+        if (!arg) { showToast("Provide a bundle title"); return; }
+        BUNDLE.title = arg;
+        showToast(`Bundle title updated`);
+      } else if (verb === "desc" || verb === "description") {
+        if (!arg) { showToast("Provide a bundle description"); return; }
+        BUNDLE.description = arg;
+        showToast("Bundle description updated");
+      } else if (verb === "badge") {
+        BUNDLE.badge = arg || "Bundle";
+        showToast("Bundle badge updated");
+      } else if (verb === "items") {
+        const parts = arg.split("|").map(s => s.trim()).filter(Boolean);
+        if (parts.length === 0) { showToast("Separate bundle items with |"); return; }
+        BUNDLE.items = parts.map((label, i) => ({
+          tag: `0${i + 1} • INCLUDED`,
+          label
+        }));
+        showToast("Bundle items updated");
+      } else if (verb === "reset") {
+        BUNDLE = JSON.parse(JSON.stringify(DEFAULT_BUNDLE));
+        showToast("Bundle reset to default");
+      } else {
+        showToast(`Unknown bundle command /${verb}`);
+        return;
+      }
+
+      input.value = "";
+      persistState();
+    }
+
+    function toggleEditProduct(id) {
+      editingProductId = editingProductId === id ? null : id;
+      renderAdminProducts();
+    }
+
+    function saveEditedProduct(id) {
+      const prod = ARTWORKS.find(p => p.id === id);
+      if (!prod) return;
+
+      const titleVal = document.getElementById(`edit-title-${id}`).value.trim();
+      const catVal = document.getElementById(`edit-cat-${id}`).value;
+      const priceVal = parseFloat(document.getElementById(`edit-price-${id}`).value);
+      const formatVal = document.getElementById(`edit-format-${id}`).value.trim();
+      const imageVal = document.getElementById(`edit-image-${id}`).value.trim();
+      const descVal = document.getElementById(`edit-desc-${id}`).value.trim();
+      const bestsellerVal = document.getElementById(`edit-best-${id}`).checked;
+
+      if (titleVal) prod.title = titleVal;
+      prod.category = catVal;
+      if (!Number.isNaN(priceVal) && priceVal >= 0) prod.basePrice = priceVal;
+      if (formatVal) prod.artist = formatVal;
+      prod.imageUrl = imageVal || ETSY_THUMBNAIL;
+      if (descVal) prod.description = descVal;
+      prod.bestseller = bestsellerVal;
+      prod.edition = bestsellerVal ? "Bestseller" : (prod.etsyUrl ? "Etsy Listing" : "Digital System");
+
+      editingProductId = null;
+      persistState();
+      showToast(`Saved "${prod.title}"`);
+    }
+
+    function runProductCommand(id) {
+      const cmdInput = document.getElementById(`cmd-input-${id}`);
+      if (!cmdInput) return;
+      const raw = cmdInput.value.trim();
+      if (!raw) return;
+
+      const prod = ARTWORKS.find(p => p.id === id);
+      if (!prod) return;
+
+      const match = raw.match(/^\/([a-zA-Z]+)\s*(.*)$/);
+      if (!match) {
+        showToast("Start command with / (e.g. /price 19, /title ..., /cat ..., /image ...)");
+        return;
+      }
+
+      const verb = match[1].toLowerCase();
+      const arg = match[2].trim();
+
+      if (verb === "price") {
+        const num = parseFloat(arg);
+        if (Number.isNaN(num) || num < 0) { showToast("Invalid /price"); return; }
+        prod.basePrice = num;
+        showToast(`Updated price of "${prod.title}" to $${num}`);
+      } else if (verb === "title") {
+        if (!arg) { showToast("Provide a title after /title"); return; }
+        prod.title = arg;
+        showToast(`Updated title to "${arg}"`);
+      } else if (verb === "cat" || verb === "category") {
+        const validCats = ["Business & Strategy", "Content & Creator", "Productivity", "Money & Finance"];
+        const found = validCats.find(c => c.toLowerCase() === arg.toLowerCase());
+        if (!found) { showToast("Invalid category"); return; }
+        prod.category = found;
+        showToast(`Moved "${prod.title}" to ${found}`);
+      } else if (verb === "bestseller") {
+        const bool = ["true", "1", "yes", "on"].includes(arg.toLowerCase());
+        prod.bestseller = bool;
+        prod.edition = bool ? "Bestseller" : (prod.etsyUrl ? "Etsy Listing" : "Digital System");
+        showToast(`${prod.title}: bestseller = ${bool}`);
+      } else if (verb === "format" || verb === "artist") {
+        if (!arg) { showToast("Provide format text after /format"); return; }
+        prod.artist = arg;
+        showToast(`Updated format for "${prod.title}"`);
+      } else if (verb === "image" || verb === "thumb") {
+        prod.imageUrl = arg || ETSY_THUMBNAIL;
+        showToast(`Updated thumbnail for "${prod.title}"`);
+      } else if (verb === "etsy" || verb === "url") {
+        prod.etsyUrl = arg || null;
+        showToast(arg ? `Linked Etsy URL on "${prod.title}"` : `Cleared Etsy URL`);
+      } else if (verb === "reset") {
+        const def = DEFAULT_PRODUCTS.find(d => d.id === id);
+        if (!def) { showToast("No default snapshot for custom item"); return; }
+        Object.assign(prod, JSON.parse(JSON.stringify(def)));
+        showToast(`Reset "${prod.title}"`);
+      } else {
+        showToast(`Unknown command /${verb}`);
+        return;
+      }
+
+      cmdInput.value = "";
+      persistState();
+    }
+
+    function renderAdminProducts() {
+      const list = document.getElementById("adminProductsList");
+      const countEl = document.getElementById("adminProdCount");
+      if (!list || !countEl) return;
+      countEl.textContent = ARTWORKS.length;
+
+      const cats = ["Business & Strategy", "Content & Creator", "Productivity", "Money & Finance"];
+
+      list.innerHTML = ARTWORKS.map(p => {
+        const isEditing = editingProductId === p.id;
+        return `
+          <div class="p-3.5 rounded-xl theme-elevated border theme-border text-xs space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <span class="font-bold theme-text-primary">${p.title}</span>
+                <span class="ml-2 text-crimson font-extrabold">($${p.basePrice})</span>
+                ${p.bestseller ? `<span class="ml-2 px-2 py-0.5 rounded bg-crimson/20 text-crimson text-[10px] font-bold uppercase">Bestseller</span>` : ''}
+                <p class="theme-text-muted text-[11px] mt-0.5">${p.category} • ${p.artist}</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="toggleEditProduct(${p.id})" class="px-3 py-1.5 rounded-lg theme-surface border theme-border hover:border-crimson font-bold theme-text-primary hover:text-crimson transition-colors">
+                  ${isEditing ? "Cancel" : "Edit"}
+                </button>
+                <button type="button" onclick="adminDeleteProduct(${p.id})" class="px-3 py-1.5 rounded-lg bg-crimson/15 text-crimson font-bold hover:bg-crimson hover:text-white transition-colors">
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            ${isEditing ? `
+              <div class="p-3.5 rounded-xl theme-surface border border-crimson/40 space-y-2.5">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                  <input id="edit-title-${p.id}" type="text" value="${p.title.replace(/"/g, "&quot;")}" class="px-3 py-2 rounded-lg theme-elevated border theme-border theme-text-primary text-xs" />
+                  <select id="edit-cat-${p.id}" class="px-3 py-2 rounded-lg theme-elevated border theme-border theme-text-primary text-xs">
+                    ${cats.map(c => `<option value="${c}" ${p.category === c ? "selected" : ""}>${c}</option>`).join("")}
+                  </select>
+                  <input id="edit-price-${p.id}" type="number" min="0" step="0.01" value="${p.basePrice}" class="px-3 py-2 rounded-lg theme-elevated border theme-border theme-text-primary text-xs" />
+                </div>
+                <input id="edit-format-${p.id}" type="text" value="${p.artist.replace(/"/g, "&quot;")}" class="w-full px-3 py-2 rounded-lg theme-elevated border theme-border theme-text-primary text-xs" />
+                <input id="edit-image-${p.id}" type="url" value="${(p.imageUrl || ETSY_THUMBNAIL).replace(/"/g, "&quot;")}" placeholder="Thumbnail Image URL" class="w-full px-3 py-2 rounded-lg theme-elevated border theme-border theme-text-primary text-xs" />
+                <input id="edit-desc-${p.id}" type="text" value="${(p.description || "").replace(/"/g, "&quot;")}" class="w-full px-3 py-2 rounded-lg theme-elevated border theme-border theme-text-primary text-xs" />
+                <div class="flex items-center justify-between pt-1">
+                  <label class="inline-flex items-center gap-2 font-semibold theme-text-secondary cursor-pointer">
+                    <input id="edit-best-${p.id}" type="checkbox" ${p.bestseller ? "checked" : ""} class="accent-crimson" />
+                    <span>Mark as Bestseller</span>
+                  </label>
+                  <button type="button" onclick="saveEditedProduct(${p.id})" class="px-4 py-1.5 rounded-lg bg-gradient-to-r from-crimson to-burgundy text-white font-bold uppercase tracking-wider text-[11px]">
+                    Save Changes
+                  </button>
+                </div>
+              </div>
+            ` : ""}
+
+            <div class="flex gap-2">
+              <input
+                id="cmd-input-${p.id}"
+                type="text"
+                onkeydown="if(event.key==='Enter'){event.preventDefault();runProductCommand(${p.id});}"
+                placeholder="Command on product: /price 19, /title New Name, /cat Productivity, /image https://..."
+                class="flex-1 px-3 py-1.5 rounded-lg theme-surface border theme-border font-mono text-[11px] theme-text-primary focus:outline-none focus:border-crimson"
+              />
+              <button type="button" onclick="runProductCommand(${p.id})" class="px-3.5 py-1.5 rounded-lg bg-burgundy hover:bg-crimson text-white font-bold uppercase tracking-wider text-[10px] transition-colors">
+                Run
+              </button>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function adminAddProduct(event) {
+      event.preventDefault();
+      const title = document.getElementById("newProdTitle").value.trim();
+      const category = document.getElementById("newProdCat").value;
+      const basePrice = parseFloat(document.getElementById("newProdPrice").value);
+      const artist = document.getElementById("newProdFormat").value.trim();
+      const imageUrl = document.getElementById("newProdImage").value.trim() || ETSY_THUMBNAIL;
+
+      const newProd = {
+        id: Date.now(),
+        title,
+        artist,
+        category,
+        edition: "New Release",
+        bestseller: false,
+        basePrice,
+        imageUrl,
+        description: "Custom digital asset system added via Glow by the Art Store Owner Console.",
+        palette: ["#E03E3E", "#6E232B", "#E3DCDE"],
+        artStyle: "monolith"
+      };
+
+      ARTWORKS.unshift(newProd);
+      persistState();
+      event.target.reset();
+      showToast(`Published "${title}" to storefront`);
+    }
+
+    function adminDeleteProduct(id) {
+      if (editingProductId === id) editingProductId = null;
+      ARTWORKS = ARTWORKS.filter(p => p.id !== id);
+      persistState();
+      showToast("Product removed from catalog");
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById("mobileMenu").classList.toggle("hidden");
+    }
+
+    function handleNewsletter(event) {
+      event.preventDefault();
+      const input = document.getElementById("newsletterEmail");
+      showToast(`Subscribed ${input.value} to Glow Drops`);
+      input.value = "";
+    }
+
+    let toastTimer;
+    function showToast(message) {
+      const toast = document.getElementById("toastNotification");
+      document.getElementById("toastMessage").textContent = message;
+      toast.classList.remove("opacity-0", "translate-y-4");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add("opacity-0", "translate-y-4");
+      }, 2800);
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      syncThemeUI();
+      renderBundleSection();
+      renderGallery(ARTWORKS);
+      saveAndRenderCart();
+      updateDownloadBadge();
+    });
+  </script>
+</body>
+</html>
